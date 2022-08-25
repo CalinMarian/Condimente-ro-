@@ -79,7 +79,7 @@ header {
 
 .subtitle {
     position: absolute;
-    top: 11%;
+    top: 10%;
     left: 40%;
     width: auto;
     font-style: normal;
@@ -120,6 +120,8 @@ header {
     font-size: var(--fs-500);
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    padding-left: var(--fs-400);
+    padding-right: var(--fs-400);
 }
 
 .quote-line1, .quote-line2 {
@@ -207,6 +209,8 @@ header {
     grid-template-columns: 40% 40%;
     justify-content: space-around;
     margin: 1rem auto;
+    padding: var(--fs-400);
+    padding-right: var(--fs-400);
 }
 
 .grid-product1, .grid-product2, .grid-product3, .grid-product4 {
@@ -215,19 +219,19 @@ header {
 }
 
 .grid-product1 {
-    background-image: url(../images/pig.png);
+    background-image: url(./img/Pig.png);
 }
 
 .grid-product2 {
-    background-image: url(../images/Sheep.png);
+    background-image: url(./img/Sheep.png);
 }
 
 .grid-product3 {
-    background-image: url(../images/Vegeta.png)
+    background-image: url(./img/Vegeta.png)
 }
 
 .grid-product4 {
-    background-image: url(../images/Mustard.png);
+    background-image: url(./img/Mustard.png);
 }
 
 .grid-text {
@@ -237,7 +241,6 @@ header {
     width: 65%;
     float: right;
     overflow: hidden;
-    align-items: center;
     text-align: center;
     margin-bottom: 3rem;
 }
@@ -265,11 +268,10 @@ header {
 .contact-container {
     color: var(--clr-primary);
     display: flex;
-    margin-top: 5%;
+    position: relative;
 }
 
 .contact-photo {
-    position: relative;
     width: 65%;
     opacity: 0.15;
 }
@@ -277,9 +279,9 @@ header {
 .contact-details {
     position: absolute;
     display: block;
-    margin-top: 10%;
+    margin-top: 15%;
     margin-left: 10%;
-    width: 40%;
+    width: 50%;
 }
 
 .contact-title {
@@ -294,16 +296,37 @@ header {
     padding-left: 10%;
 }
 
+    .contact-phone::before, .contact-email::before, .contact-address::before {
+        font-family: "Font Awesome 6 Free";
+        color: var(--clr-primary);
+        font-weight: 900;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        padding-right: 1rem;
+    }
+
+    .contact-phone::before {
+        content: "\f095";
+    }
+
+    .contact-email::before {
+        content: "\f0e0";
+    }
+
+    .contact-address::before {
+        content: "\f3c5";
+    }
+
 .contact-form {
-    position: relative;
     width: 35%;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: var(--fs-400);
 }
 
 .contact-form-title {
-    display: flex;
-    justify-content: space-around;
+    text-align: center;
+    width: 100%;
     font-style: normal;
     font-weight: 500;
     font-size: var(--fs-600);
@@ -312,10 +335,7 @@ header {
 }
 
 .contact-form-client-details {
-    display: grid;
-    grid-template-rows: 15% 15% 15% 43%;
     height: 60%;
-    gap: 4%;
 }
 
 .name, .email, .phone, .message {
@@ -324,73 +344,37 @@ header {
     font-weight: 400;
     font-style: italic;
     border-radius: 0.5rem;
+    width: 95%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.contact-phone::before {
-    font-family: "Font Awesome 6 Free";
-    color: var(--clr-primary);
-    font-weight: 900;
-    content: "\f095";
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    padding-right: 1rem;
+.name, .email, .phone {
+    height: 13%;
+    margin-bottom: 5%;
 }
 
-.contact-email::before {
-    font-family: "Font Awesome 6 Free";
-    color: var(--clr-primary);
-    font-weight: 900;
-    content: "\f0e0";
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    padding-right: 1rem;
-}
-
-.contact-address::before {
-    font-family: "Font Awesome 6 Free";
-    color: var(--clr-primary);
-    font-weight: 900;
-    content: "\f3c5";
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    padding-right: 1rem;
-}
-
-.message:placeholder-shown {
-    position: relative;
-}
-
-.message::placeholder {
-    position: absolute;
-    padding-top: 1rem;
+.message {
+    height: 40%;
 }
 
 .submit {
-    margin-top: 5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--clr-bg-btn);
-    border-radius: 0.5em;
+    text-align: center;
 }
 
 .submit-btn {
+    position: relative;
     font-size: var(--fs-500);
-    background-color: transparent;
+    background-color: var(--clr-bg-btn);
     border: transparent;
     color: var(--clr-primary);
     padding: 0.6rem;
+    margin-top: 3%;
+    border-radius: 0.5em;
     cursor: pointer;
 }
+
 
 
 /*----------------------
@@ -528,10 +512,14 @@ header {
     }
 
     .contact-title, .contact-phone, .contact-email, .contact-address {
-        font-size: var(--fs-300);
+        font-size: var(--fs-200);
     }
 
     .contact-form-title, .contact-form-client-details, .submit-btn {
-        font-size: var(--fs-400);
+        font-size: var(--fs-300);
+    }
+
+    .contact-photo {
+        width: 60%;
     }
 }
